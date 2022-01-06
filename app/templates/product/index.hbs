@@ -1,11 +1,13 @@
 List of Product <br>
+<LinkTo @route="product.create">Create New Product</LinkTo>
 <hr>
-{{#if model}}
+{{#if this.model}}
     <ul>
-        {{#each model as |item|}}
+        {{#each this.model as |item|}}
             <li>
                 Tipe Handphone: {{item.name}} <br>
-                Ringtone: {{if item.isPolyphonic "Polyphonic" "Monophonic"}}
+                Ringtone: {{if item.isPolyphonic "Polyphonic" "Monophonic"}} <br>
+                <LinkTo @route="product.detail" @model={{item.id}}>Show Detail</LinkTo>
             </li>
         {{/each}}
     </ul>
