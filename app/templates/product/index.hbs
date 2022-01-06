@@ -1,0 +1,17 @@
+List of Product <br>
+<hr>
+{{#if model}}
+    <ul>
+        {{#each model as |item|}}
+            <li>
+                Tipe Handphone: {{item.name}} <br>
+                Ringtone: {{if item.isPolyphonic "Polyphonic" "Monophonic"}}
+            </li>
+        {{/each}}
+    </ul>
+{{else}}
+    <h1>Data tidak ditemukan</h1>
+{{/if}}
+
+{{page-title "Index"}}
+{{outlet}}
